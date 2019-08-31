@@ -1,0 +1,30 @@
+---
+galaxy_info:
+  role_name: vagrant
+  author: Ali Muhammad
+  description: Role for installing 'vagrant' for virtualization purposes.
+  company: none
+  license: MIT
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+    - name: Debian
+      versions:
+        - jessie
+        - stretch
+        - buster
+    - name: EL
+      versions:
+        - 7
+
+  galaxy_tags:
+    - vagrant
+    - system
+    - os
+    - provisioning
+    - virtualization
+    - hashicorp

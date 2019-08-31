@@ -1,0 +1,9 @@
+---
+# defaults file for vagrant
+
+vagrant_app: vagrant
+vagrant_version: 2.2.5
+vagrant_osarch: linux_amd64
+vagrant_dl_url: https://releases.hashicorp.com
+vagrant_dl_loc: /tmp
+vagrant_bin_path: /usr/local/bin

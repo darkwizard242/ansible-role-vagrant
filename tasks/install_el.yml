@@ -1,0 +1,30 @@
+---
+# tasks file for vagrant
+
+- name: Downloading archive for {{ vagrant_app }} {{ vagrant_version }} temporarily to {{ vagrant_dl_loc }} on EL based systems
+  get_url:
+    url: "{{ vagrant_dl_url }}/{{ vagrant_app }}/{{ vagrant_version }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
+    dest: "{{ vagrant_dl_loc }}"
+- name: Gather package facts to verify if unzip is installed on EL based systems
+  package_facts:
+    manager: rpm
+- name: Temporarily install unzip on EL based systems if currently not in installed state on EL based systems.
+  yum:
+    name: unzip
+    state: present
+    update_cache: yes
+  when: packages['unzip'] is not defined
+- name: "{{ vagrant_app }}_unarchive on EL based systems"
+  unarchive:
+    src: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
+    dest: "{{ vagrant_bin_path }}"
+    remote_src: true
+- name: Uninstalling unzip from Debian based systems as it was originally not in installed state on EL based systems.
+  yum:
+    name: unzip
+    state: absent
+  when: packages['unzip'] is not defined
+- name: "{{ vagrant_app }}_archive_removal on EL based systems"
+  file:
+    path: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
+    state: absent
