@@ -2,7 +2,7 @@
 Ansible Role: Vagrant
 =========
 
-Role to install (_by default_) `vagrant` package  on **Ubuntu** systems.
+Role to install (_by default_) `vagrant` package  on **Debian/Ubuntu** and **EL** systems.
 
 Requirements
 ------------
