@@ -5,14 +5,21 @@ dist: bionic
 
 language: python
 python:
-  - "3.6"
   - "3.7"
 
 services:
   - docker
 
 env:
-  - ROLE_NAME: vagrant
+  global:
+    - ROLE_NAME: vagrant
+  matrix:
+    - DISTRO: centos-7
+    - DISTRO: ubuntu-18.04
+    - DISTRO: ubuntu-16.04
+    - DISTRO: debian-buster
+    - DISTRO: debian-stretch
+    - DISTRO: debian-jessie
 
 addons:
   sonarcloud:
