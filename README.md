@@ -12,26 +12,27 @@ None.
 
 Available variables are listed below (located in `defaults/main.yml`):
 
+### Variables list:
+
 ```yaml
 vagrant_app: vagrant
-vagrant_version: 2.2.5
+vagrant_version: 2.2.6
 vagrant_osarch: linux_amd64
 vagrant_dl_url: https://releases.hashicorp.com
 vagrant_dl_loc: /tmp
 vagrant_bin_path: /usr/local/bin
 ```
 
-Variable `vagrant_app`: Defines the app to install i.e. **vagrant**
+### Variables table:
 
-Variable `vagrant_version`: Defined to dynamically fetch the desired version to install. Defaults to: **0.12.4**
-
-Variable `vagrant_osarch`: Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **linux_amd64**
-
-Variable `vagrant_dl_loc`: Defined to dynamically choose where to place the binary archive for `vagrant` temporarily. Defaults to: **/tmp**
-
-Variable `vagrant_dl_url`: Defines URL to download the vagrant binary from.
-
-Variable `vagrant_bin_path`: Defined to dynamically choose the appropriate path to store vagrant binary into. Defaults to (as generally on any user's PATH): **/usr/local/bin**
+Variable         | Value (default)                  | Description
+---------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------
+vagrant_app      | vagrant                          | Defines the app to install i.e. **vagrant**
+vagrant_version  | 2.2.6                            | Defined to dynamically fetch the desired version to install. Defaults to: **2.2.6**
+vagrant_osarch   | linux_amd64                      | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **linux_amd64**
+vagrant_dl_url   | <https://releases.hashicorp.com> | Defines URL to download the vagrant binary from.
+vagrant_dl_loc   | /tmp                             | Defined to dynamically set where to place the binary archive for `vagrant` temporarily. Defaults to: **/tmp**
+vagrant_bin_path | /usr/local/bin                   | Defined to dynamically set the appropriate path to store vagrant binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin**
 
 ## Dependencies
 
@@ -54,7 +55,7 @@ For customizing behavior of role (i.e. specifying the desired **vagrant** versio
   roles:
     - role: darkwizard242.vagrant
       vars:
-        vagrant_version: 2.2.4
+        vagrant_version: 2.2.6
 ```
 
 For customizing behavior of role (i.e. placing binary of **vagrant** package in different location) in ansible playbooks.
