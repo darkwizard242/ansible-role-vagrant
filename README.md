@@ -2,7 +2,7 @@
 
 # Ansible Role: Vagrant
 
-Role to install (_by default_) `vagrant` package on **Debian/Ubuntu** and **EL** systems.
+Role to install (_by default_) [vagrant](https://www.vagrantup.com/) package on **Debian/Ubuntu** and **EL** systems.
 
 ## Requirements
 
@@ -45,7 +45,7 @@ For default behaviour of role (i.e. installation of **vagrant**) in ansible play
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.vagrant
+    - darkwizard242.vagrant
 ```
 
 For customizing behavior of role (i.e. specifying the desired **vagrant** version) in ansible playbooks.
@@ -53,9 +53,9 @@ For customizing behavior of role (i.e. specifying the desired **vagrant** versio
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.vagrant
-      vars:
-        vagrant_version: 2.2.7
+    - darkwizard242.vagrant
+  vars:
+    vagrant_version: 2.2.7
 ```
 
 For customizing behavior of role (i.e. placing binary of **vagrant** package in different location) in ansible playbooks.
@@ -63,9 +63,9 @@ For customizing behavior of role (i.e. placing binary of **vagrant** package in 
 ```yaml
 - hosts: servers
   roles:
-    - role: darkwizard242.vagrant
-      vars:
-        vagrant_bin_path: /bin/
+    - darkwizard242.vagrant
+  vars:
+    vagrant_bin_path: /bin/
 ```
 
 ## License
