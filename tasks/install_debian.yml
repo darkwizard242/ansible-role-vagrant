@@ -1,39 +1,39 @@
 ---
 # tasks file for vagrant
 
-- name: Downloading archive for {{ vagrant_app }} {{ vagrant_version }} temporarily to {{ vagrant_dl_loc }} on Debian based systems
+- name: "Downloading archive for {{ vagrant_app }} {{ vagrant_version }} temporarily to {{ vagrant_dl_loc }} on Debian based systems"
   get_url:
     url: "{{ vagrant_dl_url }}/{{ vagrant_app }}/{{ vagrant_version }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
     dest: "{{ vagrant_dl_loc }}"
-- name: Install python3-apt on Debian based systems, required for package_facts.
-  apt:
-    name: python3-apt
-    state: present
-    force_apt_get: yes
-    update_cache: yes
-- name: Gather package facts to verify if unzip is installed on Debian based systems
-  package_facts:
-    manager: apt
-- name: Temporarily install unzip currently not in installed state on Debian based systems.
+# - name: Install python3-apt on Debian based systems, required for package_facts.
+#   apt:
+#     name: python3-apt
+#     state: present
+#     force_apt_get: yes
+#     update_cache: yes
+# - name: Gather package facts to verify if unzip is installed on Debian based systems
+#   package_facts:
+#     manager: apt
+- name: Install unzip if it is currently not in an installed state on Debian based systems.
   apt:
     name: unzip
     state: present
     force_apt_get: yes
     update_cache: yes
-  when: packages['unzip'] is not defined
-- name: "{{ vagrant_app }}_unarchive on Debian based systems."
+  # when: packages['unzip'] is not defined
+- name: "Extract {{ vagrant_app }} archive on Debian based systems."
   unarchive:
     src: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
     dest: "{{ vagrant_bin_path }}"
     remote_src: true
-- name: Uninstalling unzip as it was originally not in installed state on Debian based systems.
-  apt:
-    name: unzip
-    state: absent
-    force_apt_get: yes
-    update_cache: yes
-  when: packages['unzip'] is not defined
-- name: "{{ vagrant_app }}_archive_removal on Debian based systems."
+# - name: Uninstalling unzip as it was originally not in installed state on Debian based systems.
+#   apt:
+#     name: unzip
+#     state: absent
+#     force_apt_get: yes
+#     update_cache: yes
+#   when: packages['unzip'] is not defined
+- name: "Remove {{ vagrant_app }} archive on Debian based systems."
   file:
     path: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
     state: absent
