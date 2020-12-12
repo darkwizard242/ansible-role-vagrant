@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/darkwizard242/ansible-role-vagrant.svg?branch=master)](https://travis-ci.com/darkwizard242/ansible-role-vagrant) ![Ansible Role](https://img.shields.io/ansible/role/43055?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/43055?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/43055?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-vagrant&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-vagrant) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-vagrant?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-vagrant?color=orange&style=flat-square)
+[![build-test](https://github.com/darkwizard242/ansible-role-vagrant/workflows/build-and-test/badge.svg?branch=master)](https://github.com/darkwizard242/ansible-role-vagrant/actions?query=workflow%3Abuild-and-test) [![release](https://github.com/darkwizard242/ansible-role-vagrant/workflows/release/badge.svg)](https://github.com/darkwizard242/ansible-role-vagrant/actions?query=workflow%3Arelease) ![Ansible Role](https://img.shields.io/ansible/role/43055?color=dark%20green%20) ![Ansible Role](https://img.shields.io/ansible/role/d/43055?label=role%20downloads) ![Ansible Quality Score](https://img.shields.io/ansible/quality/43055?label=ansible%20quality%20score) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-vagrant&metric=alert_status)](https://sonarcloud.io/dashboard?id=ansible-role-vagrant) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-vagrant&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=ansible-role-vagrant) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-vagrant&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=ansible-role-vagrant) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=ansible-role-vagrant&metric=security_rating)](https://sonarcloud.io/dashboard?id=ansible-role-vagrant) ![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/darkwizard242/ansible-role-vagrant?label=release) ![GitHub repo size](https://img.shields.io/github/repo-size/darkwizard242/ansible-role-vagrant?color=orange&style=flat-square)
 
 # Ansible Role: Vagrant
 
@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 vagrant_app: vagrant
-vagrant_version: 2.2.13
+vagrant_version: 2.2.14
 vagrant_osarch: linux_amd64
 vagrant_dl_url: https://releases.hashicorp.com
 vagrant_dl_loc: /tmp
@@ -28,7 +28,7 @@ vagrant_bin_path: /usr/local/bin
 Variable         | Value (default)                  | Description
 ---------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------
 vagrant_app      | vagrant                          | Defines the app to install i.e. **vagrant**
-vagrant_version  | 2.2.13                           | Defined to dynamically fetch the desired version to install. Defaults to: **2.2.13**
+vagrant_version  | 2.2.14                           | Defined to dynamically fetch the desired version to install. Defaults to: **2.2.14**
 vagrant_osarch   | linux_amd64                      | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **linux_amd64**
 vagrant_dl_url   | <https://releases.hashicorp.com> | Defines URL to download the vagrant binary from.
 vagrant_dl_loc   | /tmp                             | Defined to dynamically set where to place the binary archive for `vagrant` temporarily. Defaults to: **/tmp**
