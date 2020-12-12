@@ -6,13 +6,25 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
+PACKAGE_BINARY = '/usr/local/bin/vagrant'
+
+
 def test_vagrant_binary_exists(host):
-    assert host.file('/usr/local/bin/vagrant').exists
+    """
+    Tests if vagrant binary exists.
+    """
+    assert host.file(PACKAGE_BINARY).exists
 
 
 def test_vagrant_binary_file(host):
-    assert host.file('/usr/local/bin/vagrant').is_file
+    """
+    Tests if vagrant binary is file type.
+    """
+    assert host.file(PACKAGE_BINARY).is_file
 
 
 def test_vagrant_binary_which(host):
-    assert host.check_output('which vagrant') == '/usr/local/bin/vagrant'
+    """
+    Tests the output to confirm vagrant's binary location.
+    """
+    assert host.check_output('which vagrant') == PACKAGE_BINARY
