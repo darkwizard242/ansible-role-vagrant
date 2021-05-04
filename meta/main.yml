@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   role_name: vagrant
-  author: Ali Muhammad
+  author: darkwizard242
   description: Role for installing 'vagrant' for virtualization purposes.
   company: none
   license: MIT
