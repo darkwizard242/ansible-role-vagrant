@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 vagrant_app: vagrant
-vagrant_version: 2.2.18
+vagrant_version: 2.2.19
 vagrant_osarch: linux_amd64
 vagrant_dl_url: https://releases.hashicorp.com
 vagrant_dl_loc: /tmp
@@ -28,7 +28,7 @@ vagrant_bin_path: /usr/local/bin
 Variable         | Value (default)                  | Description
 ---------------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------
 vagrant_app      | vagrant                          | Defines the app to install i.e. **vagrant**
-vagrant_version  | 2.2.18                           | Defined to dynamically fetch the desired version to install. Defaults to: **2.2.18**
+vagrant_version  | 2.2.19                           | Defined to dynamically fetch the desired version to install. Defaults to: **2.2.19**
 vagrant_osarch   | linux_amd64                      | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **linux_amd64**
 vagrant_dl_url   | <https://releases.hashicorp.com> | Defines URL to download the vagrant binary from.
 vagrant_dl_loc   | /tmp                             | Defined to dynamically set where to place the binary archive for `vagrant` temporarily. Defaults to: **/tmp**
