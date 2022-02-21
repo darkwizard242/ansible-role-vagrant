@@ -3,7 +3,11 @@
 
 vagrant_app: vagrant
 vagrant_version: 2.2.19
-vagrant_osarch: linux_amd64
+vagrant_os: linux
+vagrant_arch: amd64
 vagrant_dl_url: https://releases.hashicorp.com
 vagrant_dl_loc: /tmp
 vagrant_bin_path: /usr/local/bin
+vagrant_file_owner: root
+vagrant_file_group: root
+vagrant_file_mode: '0755'
