@@ -23,5 +23,5 @@
 
 - name: EL Family | Remove {{ vagrant_app }} archive
   file:
-    path: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
+    path: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_arch }}.zip"
     state: absent
