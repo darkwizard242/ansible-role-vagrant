@@ -14,7 +14,7 @@
 
 - name: EL Family | Extract {{ vagrant_app }} archive
   unarchive:
-    src: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
+    src: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_arch }}.zip"
     dest: "{{ vagrant_bin_path }}"
     owner: "{{ vagrant_file_owner }}"
     group: "{{ vagrant_file_group }}"
