@@ -3,7 +3,7 @@
 
 - name: Debian/Ubuntu Family | Downloading archive for {{ vagrant_app }} {{ vagrant_version }} temporarily to {{ vagrant_dl_loc }}
   get_url:
-    url: "{{ vagrant_dl_url }}/{{ vagrant_app }}/{{ vagrant_version }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_osarch }}.zip"
+    url: "{{ vagrant_dl_url }}/{{ vagrant_app }}/{{ vagrant_version }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_arch }}.zip"
     dest: "{{ vagrant_dl_loc }}"
 
 - name: Debian/Ubuntu Family | Install unzip if it is currently not in an installed state
