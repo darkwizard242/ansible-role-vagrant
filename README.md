@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 vagrant_app: vagrant
-vagrant_version: 2.3.6
+vagrant_version: 2.3.7
 vagrant_os: linux
 vagrant_arch: amd64
 vagrant_dl_url: https://releases.hashicorp.com
