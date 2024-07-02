@@ -17,8 +17,16 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 vagrant_app: vagrant
 vagrant_version: 2.4.1
-vagrant_os: linux
-vagrant_arch: amd64
+vagrant_os: "{{ ansible_system | lower }}"
+vagrant_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  armv6l: armv6
+  armv7l: armv7
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: amd64
 vagrant_dl_url: https://releases.hashicorp.com
 vagrant_dl_loc: /tmp
 vagrant_bin_path: /usr/local/bin
@@ -29,18 +37,18 @@ vagrant_file_mode: '0755'
 
 ### Variables table:
 
-Variable           | Description
------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------
-vagrant_app        | Defines the app to install i.e. **vagrant**
-vagrant_version    | Defined to dynamically fetch the desired version to install. Defaults to: **2.4.1**
-vagrant_os         | Defines os type. Used for obtaining the correct type of binaries based on OS type. Defaults to: **linux**
-vagrant_arch       | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture. Defaults to: **amd64**
-vagrant_dl_url     | Defines URL to download the vagrant binary from.
-vagrant_dl_loc     | Defined to dynamically set where to place the binary archive for `vagrant` temporarily. Defaults to: **/tmp**
-vagrant_bin_path   | Defined to dynamically set the appropriate path to store vagrant binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin**
-vagrant_file_owner | Owner for the binary file of vagrant.
-vagrant_file_group | Group for the binary file of vagrant.
-vagrant_file_mode  | Mode for the binary file of vagrant.
+Variable                 | Description
+------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------
+vagrant_app              | Defines the app to install i.e. **vagrant**
+vagrant_version          | Defined to dynamically fetch the desired version to install. Defaults to: **2.4.1**
+vagrant_os               | Defines os type. Used for obtaining the correct type of binaries based on OS type.
+vagrant_architecture_map | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture.
+vagrant_dl_url           | Defines URL to download the vagrant binary from.
+vagrant_dl_loc           | Defined to dynamically set where to place the binary archive for `vagrant` temporarily. Defaults to: **/tmp**
+vagrant_bin_path         | Defined to dynamically set the appropriate path to store vagrant binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin**
+vagrant_file_owner       | Owner for the binary file of vagrant.
+vagrant_file_group       | Group for the binary file of vagrant.
+vagrant_file_mode        | Mode for the binary file of vagrant.
 
 ## Dependencies
 

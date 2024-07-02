@@ -3,7 +3,7 @@
 
 - name: EL Family | Downloading archive for {{ vagrant_app }} {{ vagrant_version }} temporarily to {{ vagrant_dl_loc }}
   ansible.builtin.get_url:
-    url: "{{ vagrant_dl_url }}/{{ vagrant_app }}/{{ vagrant_version }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_arch }}.zip"
+    url: "{{ vagrant_dl_url }}/{{ vagrant_app }}/{{ vagrant_version }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_architecture_map[ansible_architecture] }}.zip"
     dest: "{{ vagrant_dl_loc }}"
 
 - name: EL Family | Install unzip if it is  currently not in an installed state
@@ -14,7 +14,7 @@
 
 - name: EL Family | Extract {{ vagrant_app }} archive
   ansible.builtin.unarchive:
-    src: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_arch }}.zip"
+    src: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_architecture_map[ansible_architecture] }}.zip"
     dest: "{{ vagrant_bin_path }}"
     owner: "{{ vagrant_file_owner }}"
     group: "{{ vagrant_file_group }}"
@@ -23,5 +23,5 @@
 
 - name: EL Family | Remove {{ vagrant_app }} archive
   ansible.builtin.file:
-    path: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_arch }}.zip"
+    path: "{{ vagrant_dl_loc }}/{{ vagrant_app }}_{{ vagrant_version }}_{{ vagrant_os }}_{{ vagrant_architecture_map[ansible_architecture] }}.zip"
     state: absent
