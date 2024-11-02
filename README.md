@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 vagrant_app: vagrant
-vagrant_version: 2.4.1
+vagrant_version: 2.4.2
 vagrant_os: "{{ ansible_system | lower }}"
 vagrant_architecture_map:
   amd64: amd64
@@ -40,7 +40,7 @@ vagrant_file_mode: '0755'
 Variable                 | Description
 ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------
 vagrant_app              | Defines the app to install i.e. **vagrant**
-vagrant_version          | Defined to dynamically fetch the desired version to install. Defaults to: **2.4.1**
+vagrant_version          | Defined to dynamically fetch the desired version to install. Defaults to: **2.4.2**
 vagrant_os               | Defines os type. Used for obtaining the correct type of binaries based on OS type.
 vagrant_architecture_map | Defines os architecture. Used to set the correct type of binaries based on OS System Architecture.
 vagrant_dl_url           | Defines URL to download the vagrant binary from.
